@@ -39,7 +39,7 @@
             }
           ],
           "image-name" : "未命名2 2.png",
-          "name" : "未命名2 2",
+          "name" : "Frame",
           "position" : {
             "scale" : 1.45,
             "translation-in-points" : [
@@ -64,7 +64,7 @@
           "glass" : true,
           "hidden" : false,
           "image-name" : "未命名3 2.png",
-          "name" : "未命名3 2",
+          "name" : "Sun",
           "opacity" : 0.83,
           "position" : {
             "scale" : 2.82,
