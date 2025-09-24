@@ -51,12 +51,56 @@
         }
       }
     },
+    "恢复操作失败" : {
+      "comment" : "恢复操作失败",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restore failed"
+          }
+        }
+      }
+    },
     "扫描应用" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scan Apps"
+          }
+        }
+      }
+    },
+    "找不到 Info.plist 文件" : {
+      "comment" : "找不到 Info.plist 文件",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can’t find Info.plist"
+          }
+        }
+      }
+    },
+    "找不到图标文件" : {
+      "comment" : "找不到图标文件",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can’t find icon"
+          }
+        }
+      }
+    },
+    "找不到应用程序包" : {
+      "comment" : "找不到应用程序包",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can’t find App Bundle"
           }
         }
       }

@@ -63,13 +63,13 @@ enum IconRestorer {
         var errorDescription: String? {
             switch self {
             case .bundleNotFound:
-                return "找不到应用程序包"
+                return NSLocalizedString("找不到应用程序包", comment: "找不到应用程序包")
             case .infoPlistNotFound:
-                return "找不到 Info.plist 文件"
+                return NSLocalizedString("找不到 Info.plist 文件", comment: "找不到 Info.plist 文件")
             case .iconFileNotFound:
-                return "找不到图标文件"
+                return NSLocalizedString("找不到图标文件", comment: "找不到图标文件")
             case .restoreOperationFailed:
-                return "恢复操作失败"
+                return NSLocalizedString("恢复操作失败", comment: "恢复操作失败")
             }
         }
     }
