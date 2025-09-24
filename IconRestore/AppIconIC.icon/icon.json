@@ -1,0 +1,93 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.77353,0.91193,0.93040,1.00000",
+      "display-p3:0.51733,0.54114,0.88635,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "blend-mode-specializations" : [
+        {
+          "value" : "overlay"
+        },
+        {
+          "appearance" : "dark",
+          "value" : "normal"
+        },
+        {
+          "appearance" : "tinted",
+          "value" : "normal"
+        }
+      ],
+      "blur-material" : null,
+      "layers" : [
+        {
+          "blend-mode" : "normal",
+          "fill-specializations" : [
+            {
+              "value" : "automatic"
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "linear-gradient" : [
+                  "display-p3:0.50031,0.77832,0.89380,1.00000",
+                  "display-p3:0.74875,0.74507,0.92395,1.00000"
+                ]
+              }
+            }
+          ],
+          "image-name" : "未命名2 2.png",
+          "name" : "未命名2 2",
+          "position" : {
+            "scale" : 1.45,
+            "translation-in-points" : [
+              24,
+              -26
+            ]
+          }
+        },
+        {
+          "blend-mode" : "lighten",
+          "fill-specializations" : [
+            {
+              "value" : "automatic"
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "display-p3:0.93176,0.92920,0.71301,1.00000"
+              }
+            }
+          ],
+          "glass" : true,
+          "hidden" : false,
+          "image-name" : "未命名3 2.png",
+          "name" : "未命名3 2",
+          "opacity" : 0.83,
+          "position" : {
+            "scale" : 2.82,
+            "translation-in-points" : [
+              -106,
+              -120
+            ]
+          }
+        }
+      ],
+      "lighting" : "individual",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 1
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : "shared"
+  }
+}
