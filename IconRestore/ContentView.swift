@@ -257,7 +257,7 @@ struct ContentView: View {
     private func scanApplications() {
         isScanning = true
         progress = 0.0
-        currentOperation = "开始扫描..."
+        currentOperation = NSLocalizedString("开始扫描...", comment: "开始扫描...")
         
         DispatchQueue.global(qos: .userInitiated).async {
             let appsFolderURL = URL(fileURLWithPath: "/Applications")
@@ -272,7 +272,7 @@ struct ContentView: View {
                 for (index, appURL) in apps.enumerated() {
                     DispatchQueue.main.async {
                         self.progress = Double(index) / Double(totalApps)
-                        self.currentOperation = "正在处理: \(appURL.lastPathComponent)"
+                        self.currentOperation = NSLocalizedString("正在处理: \(appURL.lastPathComponent)", comment: "正在处理")
                     }
                     
                     if let appInfo = AppInfo.from(url: appURL) {
@@ -287,7 +287,7 @@ struct ContentView: View {
                     self.selectedApps = foundApps
                     self.isScanning = false
                     self.progress = 1.0
-                    self.currentOperation = "扫描完成！"
+                    self.currentOperation = NSLocalizedString("扫描完成！", comment: "扫描完成！")
                     
                     // 延迟清除进度信息
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -299,7 +299,7 @@ struct ContentView: View {
             } catch {
                 DispatchQueue.main.async {
                     self.isScanning = false
-                    self.alertMessage = "扫描失败: \(error.localizedDescription)"
+                    self.alertMessage = NSLocalizedString("扫描失败: \(error.localizedDescription)", comment: "扫描失败")
                     self.showAlert = true
                 }
             }
@@ -327,10 +327,10 @@ struct ContentView: View {
         do {
             try IconRestorer.restoreIcon(for: app)
             IconRestorer.refreshIcon()
-            alertMessage = "成功恢复 \(app.name) 的图标"
+            alertMessage = NSLocalizedString("成功恢复 \(app.name) 的图标", comment: "成功恢复")
             showAlert = true
         } catch {
-            alertMessage = "恢复 \(app.name) 图标失败: \(error.localizedDescription)"
+            alertMessage = NSLocalizedString("恢复 \(app.name) 图标失败: \(error.localizedDescription)", comment: "恢复失败")
             showAlert = true
         }
     }
@@ -338,7 +338,7 @@ struct ContentView: View {
     private func restoreAllIcons() {
         isScanning = true
         progress = 0.0
-        currentOperation = "正在恢复应用图标..."
+        currentOperation = NSLocalizedString("正在恢复应用图标...", comment: "正在恢复应用图标...")
         
         DispatchQueue.global(qos: .userInitiated).async {
             var successCount = 0
@@ -348,7 +348,7 @@ struct ContentView: View {
             for (index, app) in selectedApps.enumerated() {
                 DispatchQueue.main.async {
                     self.progress = Double(index) / Double(totalApps)
-                    self.currentOperation = "正在恢复: \(app.name)"
+                    self.currentOperation = NSLocalizedString("正在恢复: \(app.name)", comment: "正在恢复")
                 }
                 
                 do {
@@ -365,7 +365,7 @@ struct ContentView: View {
                 IconRestorer.refreshIcon()
                 self.isScanning = false
                 self.progress = 1.0
-                self.alertMessage = "恢复完成！成功: \(successCount)，失败: \(failureCount)"
+                self.alertMessage = NSLocalizedString("恢复完成！成功: \(successCount)，失败: \(failureCount)", comment: "恢复完成")
                 self.showAlert = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

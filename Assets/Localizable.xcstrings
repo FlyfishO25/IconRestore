@@ -21,6 +21,17 @@
         }
       }
     },
+    "开始扫描..." : {
+      "comment" : "开始扫描...",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanning…"
+          }
+        }
+      }
+    },
     "恢复" : {
       "localizations" : {
         "en" : {
@@ -58,6 +69,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Restore failed"
+          }
+        }
+      }
+    },
+    "扫描完成！" : {
+      "comment" : "扫描完成！",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanning Complete!"
           }
         }
       }
@@ -111,6 +133,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Info"
+          }
+        }
+      }
+    },
+    "正在恢复应用图标..." : {
+      "comment" : "正在恢复应用图标...",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restoring…"
           }
         }
       }
