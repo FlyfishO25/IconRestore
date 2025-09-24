@@ -108,14 +108,14 @@ enum IconRestorer {
         // 使用 shell 脚本替代 AppleScript 来执行图标替换操作
         let tempIconPath = "/tmp/tempIcon.icns"
         let tempRsrcPath = "/tmp/tempIcon.rsrc"
-        let appPath = app.path
-        let iconPath = iconURL.path
+        let appPath = app.path.replacingOccurrences(of: " ", with: "\\ ")
+        let iconPath = iconURL.path.replacingOccurrences(of: " ", with: "\\ ")
         
         let shellScript = """
         cp "\(iconPath)" "\(tempIconPath)";
         sips -i "\(tempIconPath)";
         DeRez -only icns "\(tempIconPath)" > "\(tempRsrcPath)";
-        rm \(appPath)/Icon?
+        rm "\(appPath)/Icon?"
         SetFile -a C "\(appPath)";
         touch \(appPath)/$\'Icon\\r\'
         Rez -append "\(tempRsrcPath)" -o \(appPath)/Icon?
