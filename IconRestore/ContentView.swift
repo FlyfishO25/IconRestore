@@ -336,20 +336,44 @@ struct ContentView: View {
     }
     
     private func restoreAllIcons() {
-        var successCount = 0
-        var failureCount = 0
+        isScanning = true
+        progress = 0.0
+        currentOperation = "正在恢复应用图标..."
         
-        for app in selectedApps {
-            do {
-                try IconRestorer.restoreIcon(for: app)
-                successCount += 1
-            } catch {
-                failureCount += 1
+        DispatchQueue.global(qos: .userInitiated).async {
+            var successCount = 0
+            var failureCount = 0
+            let totalApps = selectedApps.count
+            
+            for (index, app) in selectedApps.enumerated() {
+                DispatchQueue.main.async {
+                    self.progress = Double(index) / Double(totalApps)
+                    self.currentOperation = "正在恢复: \(app.name)"
+                }
+                
+                do {
+                    try IconRestorer.restoreIcon(for: app)
+                    successCount += 1
+                } catch {
+                    failureCount += 1
+                }
+                
+                usleep(10000) // 小延迟用于显示进度
+            }
+            
+            DispatchQueue.main.async {
+                IconRestorer.refreshIcon()
+                self.isScanning = false
+                self.progress = 1.0
+                self.alertMessage = "恢复完成！成功: \(successCount)，失败: \(failureCount)"
+                self.showAlert = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.currentOperation = ""
+                    self.progress = 0
+                }
             }
         }
-        IconRestorer.refreshIcon()
-        alertMessage = "恢复完成！成功: \(successCount)，失败: \(failureCount)"
-        showAlert = true
     }
     
     private func clearSelection() {

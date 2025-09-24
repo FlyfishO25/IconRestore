@@ -137,8 +137,8 @@ enum IconRestorer {
         process.waitUntilExit()
         
         if process.terminationStatus != 0 {
-            let outputData = pipe.fileHandleForReading.readDataToEndOfFile()
-            let resultInformation = String(data: outputData, encoding: .utf8)
+            //let outputData = pipe.fileHandleForReading.readDataToEndOfFile()
+            //let resultInformation = String(data: outputData, encoding: .utf8)
             //print(resultInformation)
             throw RestoreError.restoreOperationFailed
         }
