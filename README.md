@@ -10,3 +10,5 @@ So I made this App to restore it.
 
 ## Credit
 [Stackoverflow/@Gregory Vincic](https://stackoverflow.com/questions/8371790/how-to-set-icon-on-file-or-directory-using-cli-on-os-x) for method setting icons.
+
+Claude.ai for doing the UI part.
