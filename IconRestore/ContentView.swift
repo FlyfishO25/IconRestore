@@ -16,7 +16,7 @@ struct AppRowView: View {
     
     var body: some View {
         HStack(spacing: 12) {
-            // 应用图标
+            // App icon
             if let icon = app.icon {
                 Image(nsImage: icon)
                     .resizable()
@@ -32,7 +32,7 @@ struct AppRowView: View {
                     )
             }
             
-            // 应用信息
+            // App info
             VStack(alignment: .leading, spacing: 4) {
                 Text(app.name)
                     .font(.headline)
@@ -52,7 +52,7 @@ struct AppRowView: View {
             
             Spacer()
             
-            // 恢复按钮
+            // Restore button
             Button(action: onRestore) {
                 HStack(spacing: 4) {
                     Image(systemName: "arrow.counterclockwise")
@@ -62,7 +62,7 @@ struct AppRowView: View {
             .buttonStyle(.bordered)
             .controlSize(.small)
             
-            // 删除按钮
+            // Delete Button
             Button(action: onDelete) {
                 HStack(spacing: 4) {
                     Image(systemName: "trash")

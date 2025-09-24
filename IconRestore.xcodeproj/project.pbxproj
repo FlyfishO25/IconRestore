@@ -16,6 +16,11 @@
 			path = IconRestore;
 			sourceTree = "<group>";
 		};
+		F1C07E972E83A5AB0004F4C3 /* Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 		F1C07E7E2E82C1070004F4C3 = {
 			isa = PBXGroup;
 			children = (
+				F1C07E972E83A5AB0004F4C3 /* Assets */,
 				F1C07E892E82C1070004F4C3 /* IconRestore */,
 				F1C07E882E82C1070004F4C3 /* Products */,
 			);
@@ -62,6 +68,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F1C07E892E82C1070004F4C3 /* IconRestore */,
+				F1C07E972E83A5AB0004F4C3 /* Assets */,
 			);
 			name = IconRestore;
 			packageProductDependencies = (
@@ -86,7 +93,7 @@
 				};
 			};
 			buildConfigurationList = F1C07E822E82C1070004F4C3 /* Build configuration list for PBXProject "IconRestore" */;
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -186,6 +193,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -244,6 +252,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
