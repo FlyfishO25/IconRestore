@@ -112,15 +112,15 @@ enum IconRestorer {
         let iconPath = iconURL.path.replacingOccurrences(of: " ", with: "\\ ")
         
         let shellScript = """
-        cp "\(iconPath)" "\(tempIconPath)";
-        sips -i "\(tempIconPath)";
-        DeRez -only icns "\(tempIconPath)" > "\(tempRsrcPath)";
-        rm "\(appPath)/Icon?"
-        SetFile -a C "\(appPath)";
+        cp \(iconPath) \(tempIconPath);
+        sips -i \(tempIconPath);
+        DeRez -only icns \(tempIconPath) > \(tempRsrcPath);
+        [ -f \(appPath)/Icon? ] && rm \(appPath)/Icon?
+        SetFile -a C \(appPath);
         touch \(appPath)/$\'Icon\\r\'
-        Rez -append "\(tempRsrcPath)" -o \(appPath)/Icon?
+        Rez -append \(tempRsrcPath) -o \(appPath)/Icon?
         SetFile -a V \(appPath)/Icon?
-        rm "\(tempIconPath)" "\(tempRsrcPath)";
+        rm \(tempIconPath) \(tempRsrcPath);
         """
         
         //print(shellScript)
